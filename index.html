@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+ASSIGNMENT RULES  
+        - This is exercise should be done in couples
+        - Implement one exercise each
+        - We suggest you to use Visual Studio Code Live Sharing for working "together" on the code ( https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack )
+        - We suggest you to use Slack to speak to each other
+
+        - The solution must be pushed to the repository and be available for the tutors by the end of the day
+        - You can ask for tutor's help
+        - You can google / use StackOverflow BUT we suggest you to use just the material provided
+        - To test the page, just open it with your default browser.
+        - Use Bootstrap4 classes to render the page.
+        - Use correctly containers and rows in order to have a great display
+
+
+        You are implementing a website for a Travel Agency.
+        In the page you can add all the destination you'd like to go in the next future!
+        
+
+        Ex 1) Implement a navigation bar, connected to all the sections of the page. 
+        Ex 2) Add a logo into the navigation bar //I'll add the logo when you finish the navbar!!!
+        Ex 3) Add a Jumbotron section in which you present name and claim of the tour operator
+        Ex 4) Implement the "Deal of the Week" section. In this section you'll display 4 destinations.
+         In this section you should have:
+            - 4 destinations per row when the screen is very large
+            - 3 destinations per row when you are on a tablet (or a smaller window)
+            - 2 destinations per row when you are on a small screen
+
+        Ex 5) Implement the "Welcome Summer" section. In this section you'll propose 6 destinations
+            In this section you should have:
+                - 6 destinations per row when the screen is very large
+                - 3 destinations per row when you are on a tablet (or a smaller window)
+                - 2 destinations per row when you are on a small screen
+        
+        Ex 6) Implement a "Deal of the day" section. In this section you'll have:
+            - 66% of the page with a picture of the destination
+            - 33% with Name, dates, price and a short description
+
+        Ex 7) Make the "Deal of the day" section disappear when the user is mobile
+        Ex 8) Add to the Welcome Summer destinations a large shadow
+        Ex 9) Create a section Last Minute, in which you'll display the pictures from the destinations as Cards
+        Ex 10) Create a "Testimonial" section, in which the user can find several feedback from fake customers
+        Ex 11) Create a footer with the company information and a button "contact us"
+
+        Ex 11) Create a button next to each section to collapse and reopen the given section
+        Ex 12) Create a method that counts the number of "travels" on the page
+        Ex 13) Create a modal view with a message and a email field
+        Ex 14) When the user clicks on "contact us" the modal is displayed
+        Ex 15) Create a function that adds a "HOT" badge to all the "Welcome Summer" offers
+        Ex 16) Create a function to delete all "cards" from the page
+      -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--MATERIAL ICONS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    /*STYLE GOES HERE*/
+  </style>
+
+</head>
+
+<body>
+  <!--NAVBAR HERE-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><img src="https://www.freelogodesign.org/file/app/client/thumb/05aa8cb1-f3e2-4832-a57a-e3cf1e93469f_200x200.png?1571836698764" alt="" width="75" height="75"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Book now
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Deals of week</a>
+              <a class="dropdown-item" href="#">Deals of month</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"></a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  <!--NAVBAR HERE-->
+
+  <!--EX3-->
+  <div class="jumbotron">
+    <h1 class="display-4">Travel Agency</h1>
+    <p class="lead">Travel without limits.</p>
+  </div>
+  <!--EX3-->
+  <!--EX4-->
+  <section id="dealoftheweek">
+    <div class="container-fluid">
+      <h1 class="text-center">Deal of the week</h1>
+      <div class="row">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/budapest-danubio-parlamento-1552491234.jpg?crop=1.00xw:0.847xh;0,0.0570xh&resize=480:*" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Budapest</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3"><div class="card">
+  <img src="https://www.telegraph.co.uk/content/dam/Travel/hotels/europe/france/paris/paris-cityscape-overview-guide-xlarge.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Paris</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div></div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3"><div class="card">
+  <img src="https://a.cdn-hotels.com/gdcs/production60/d1160/96f919d0-a88e-11e8-bc7c-0242ac110002.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Munich</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div></div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3"><div class="card">
+  <img src="https://s27363.pcdn.co/wp-content/uploads/2018/09/Main-Market-Square-Krakow.jpg.optimal.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Krakow</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div></div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3"><div class="card">
+  <img src="https://canelapr.com/wp-content/uploads/2016/10/madrid-bike-tour.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Madrid</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div></div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3"><div class="card">
+  <img src="https://cdn.anadventurousworld.com/wp-content/uploads/2019/01/where-to-stay-in-prague.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Prague</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div></div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3"><div class="card">
+  <img src="http://img2.rtve.es/v/624094/" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Barcelona</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div></div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3"><div class="card">
+  <img src="https://www.migratingmiss.com/wp-content/uploads/2017/01/Lisbon-Portugal-21-2-1-1024x734.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div></div>
+      </div>
+    </div>
+  </section>
+  <!--EX5-->
+  <section id="WelcomeSummer">
+      <div class="container-fluid">
+        <h1 class="text-center">Welcome summer</h1>
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card">
+              <img src="http://www.youramazingplaces.com/wp-content/uploads/2014/07/Vernazza-1-620x387.jpg" class="card-img-top" alt="..."  width="320" height="180">
+              <div class="card-body">
+                <h5 class="card-title">Vernazza</h5>
+                <p class="card-text">Summer Destination</p>
+                <a href="#" class="btn btn-primary">Visit here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4"><div class="card">
+    <img src="http://www.youramazingplaces.com/wp-content/uploads/2014/06/Cancun-2-620x465.jpg" class="card-img-top" alt="..."  width="320" height="180">
+    <div class="card-body">
+      <h5 class="card-title">Cancun</h5>
+      <p class="card-text">Summer Destination</p>
+      <a href="#" class="btn btn-primary">Visit here</a>
+    </div>
+  </div></div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4"><div class="card">
+    <img src="http://www.henge.org.uk/wp-content/uploads/2017/03/Summer-holiday-wallpapers-HD-840x560.jpg" class="card-img-top" alt="..."  width="320" height="180">
+    <div class="card-body">
+      <h5 class="card-title">Bulgaria</h5>
+      <p class="card-text">Summer Destination</p>
+      <a href="#" class="btn btn-primary">Vist here</a>
+    </div>
+  </div></div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4"><div class="card">
+    <img src="https://apis.xogrp.com/media-api/images/7d6f1e2f-c8bc-4300-a025-bb9e2f011d33" class="card-img-top" alt="..." width="320" height="180">
+    <div class="card-body">
+      <h5 class="card-title">The Knot</h5>
+      <p class="card-text">Summer Destinaton</p>
+      <a href="#" class="btn btn-primary">Visit here</a>
+    </div>
+  </div></div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3"><div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBrZi9Fb0KSROcCfEBGU_x2PdheQNb8QZDKPkkSIOmxHh4RHh_3g&s" class="card-img-top" alt="..."  width="320" height="180">
+    <div class="card-body">
+      <h5 class="card-title">Italy</h5>
+      <p class="card-text">Summer Destination</p>
+      <a href="#" class="btn btn-primary">Visit here</a>
+    </div>
+  </div></div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4"><div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwRFAJbJlyTM_hb_5xGTgXFhFxHJhiSsF-NpG3KngGQzqToRjI&s" class="card-img-top" alt="..."  width="320" height="180">
+    <div class="card-body">
+      <h5 class="card-title">Poland</h5>
+      <p class="card-text">Summer Destination</p>
+      <a href="#" class="btn btn-primary">Visit here</a>
+    </div>
+  </div></div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4"><div class="card">
+    <img src="https://cdn.asiatatler.com/asiatatler/i/ph/2019/04/04205846-cover_cover_2000x1331.jpg" class="card-img-top" alt="..."  width="320" height="180">
+    <div class="card-body">
+      <h5 class="card-title">Philipina</h5>
+      <p class="card-text">Summer Destinaton</p>
+      <a href="#" class="btn btn-primary">visit here</a>
+    </div>
+  </div></div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4"><div class="card">
+    <img src="data:image/jpeg;base64,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" class="card-img-top" alt="..."  width="320" height="180">
+    <div class="card-body">
+      <h5 class="card-title">France</h5>
+      <p class="card-text">Summer Destinaton</p>
+      <a href="#" class="btn btn-primary">Visit here</a>
+    </div>
+  </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!--EX6-->
+  <section id="dealoftheday" class="d-none d-sm-block">
+    <div class="container-fluid">
+        <h1 class="text-center">Deal of the day</h1>
+      <div class="row">
+        <div class="col-8" id="picturedealoftheday"></div>
+        <div class="col-4">
+          <h2 class="text-center">Mallorca</h1>
+          <p class="text-center"> Try to enjoy the Balearic islands! I say "Try to" because they are so full of drunk british tourists.
+            <br>(every part of the Spanish coast is full of drunk british tourist so trust us and take this deal, at least it's cheap)
+          </p>
+          <h4 class="text-center">66€ Flights</h4>
+          <h5 class="text-center">Dates from 24 Oct to 1 Nov </h5>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Testimonials v.2 -->
+<section class="text-center my-5">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold my-5">Testimonials</h2>
+  
+    <div class="wrapper-carousel-fix">
+      <!-- Carousel Wrapper -->
+      <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+        data-interval="false">
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+          <!--First slide-->
+          <div class="carousel-item active">
+            <div class="testimonial">
+              <!--Avatar-->
+              <div class="avatar mx-auto mb-4">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid"
+                  alt="First sample avatar image">
+              </div>
+              <!--Content-->
+              <p>
+                <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
+                eos
+                id officiis hic tenetur quae quaerat ad velit ab. Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Dolore cum accusamus eveniet molestias voluptatum inventore laboriosam labore
+                sit, aspernatur praesentium iste impedit quidem dolor veniam.
+              </p>
+              <h4 class="font-weight-bold">Anna Deynah</h4>
+              <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
+              <!--Review-->
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star-half-alt blue-text"> </i>
+            </div>
+          </div>
+          <!--First slide-->
+          <!--Second slide-->
+          <div class="carousel-item">
+            <div class="testimonial">
+              <!--Avatar-->
+              <div class="avatar mx-auto mb-4">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" class="rounded-circle img-fluid"
+                  alt="Second sample avatar image">
+              </div>
+              <!--Content-->
+              <p>
+                <i class="fas fa-quote-left"></i> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+                odit
+                aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+                porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
+                non numquam eius modi tempora incidunt ut labore. </p>
+              <h4 class="font-weight-bold">Maria Kate</h4>
+              <h6 class="font-weight-bold my-3">Photographer at Studio LA</h6>
+              <!--Review-->
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+            </div>
+          </div>
+          <!--Second slide-->
+          <!--Third slide-->
+          <div class="carousel-item">
+            <div class="testimonial">
+              <!--Avatar-->
+              <div class="avatar mx-auto mb-4">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle img-fluid"
+                  alt="Third sample avatar image">
+              </div>
+              <!--Content-->
+              <p>
+                <i class="fas fa-quote-left"></i> Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+                error sit voluptatem accusantium doloremque laudantium.</p>
+              <h4 class="font-weight-bold">John Doe</h4>
+              <h6 class="font-weight-bold my-3">Front-end Developer in NY</h6>
+              <!--Review-->
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="fas fa-star blue-text"> </i>
+              <i class="far fa-star blue-text"> </i>
+            </div>
+          </div>
+          <!--Third slide-->
+        </div>
+        <!--Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev left carousel-control" href="#carousel-example-1" role="button"
+          data-slide="prev">
+          
+          <span class="icon-prev" aria-hidden="true"><i class="material-icons"  style="color: black;">
+              skip_previous
+              </i></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next right carousel-control" href="#carousel-example-1" role="button"
+          data-slide="next">
+          <span class="icon-next" aria-hidden="true"><i class="material-icons" style="color: black;">
+              skip_next
+              </i></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <!--Controls are the controls-->
+      </div>
+      <!-- Carousel Wrapper -->
+    </div>
+  
+  </section>
+  <!-- Section: Testimonials v.2 -->
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
